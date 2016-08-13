@@ -108,6 +108,7 @@ class Jobloggr_Admin {
 	 */
 	public function setup_ia() {
 
+	    // Define "Job" CPT
 		$post_types['job'] = array(
 
 			'labels' => piklist( 'post_type_labels', 'Job' ),
@@ -150,6 +151,7 @@ class Jobloggr_Admin {
 			)*/
 		);
 
+        // Define "Workflow" CPT
 		$post_types['workflow'] = array(
 
 			'labels' => piklist( 'post_type_labels', 'Workflow' ),
@@ -159,6 +161,39 @@ class Jobloggr_Admin {
 			'capability_type' => 'post',
 
 		);
+
+        // Define "Business" CPT
+        $post_types['business'] = array(
+
+            'labels' => piklist( 'post_type_labels', 'Businesses' ),
+            'supports'  => array( 'title', 'editor' ),
+            'public' => true,
+            'has_archive' => true,
+            'capability_type' => 'post',
+
+        );
+
+        // Define "Step" CPT
+        $post_types['step'] = array(
+
+            'labels' => piklist( 'post_type_labels', 'Steps' ),
+            'supports'  => array( 'title', 'editor' ),
+            'public' => true,
+            'has_archive' => true,
+            'capability_type' => 'post',
+
+        );
+
+        // Define "Step Entry" CPT
+        $post_types['step_entry'] = array(
+
+            'labels' => piklist( 'post_type_labels', 'Step entries' ),
+            'supports'  => array( 'title', 'editor' ),
+            'public' => true,
+            'has_archive' => true,
+            'capability_type' => 'post',
+
+        );
 
 		return $post_types;
 
