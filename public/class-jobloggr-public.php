@@ -100,4 +100,24 @@ class Jobloggr_Public {
 
 	}
 
+    /**
+     * Enable templates inside plugin to be used with the current theme
+     *
+     * @param string $template
+     * @return string
+     */
+	public function template_include( $template ) {
+
+        if( is_archive( 'job' ) ) {
+            $template = WP_PLUGIN_DIR .'/'. plugin_basename( dirname(__FILE__) ) .'/templates/archive-job.php';
+        }
+
+        if( is_singular( 'events' ) ) {
+            $template = WP_PLUGIN_DIR .'/'. plugin_basename( dirname(__FILE__) ) .'/single-events.php';
+        }
+
+        return $template;
+
+    }
+
 }
